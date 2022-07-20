@@ -1,0 +1,35 @@
+
+
+
+.navbar {
+    display: flex;
+    margin: 10px;
+}
+
+.navbar a {
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.content a {
+    margin-right: 20px;
+}
+
+.home {
+    font-size: 30px;
+}
+
+.footer {
+    margin-top: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.btn-mypage{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.btn-logout {
+    margin-left: 10px;
+}
