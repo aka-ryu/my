@@ -20,10 +20,13 @@
 -새로고침시 에도 front state 유지 (cookies로 재인증처리)<br>
 -url 직접입력등의 비정상 적인 접근 차단 (글보기,글작성 비회원불가 및 글수정 작성자만가능 등)<br>
 
+-react gcp app engine deploy 완료<br>
+-database gcp mysql<br>
+-spiring boot local ngrok deploy(gcp failed...) <br>
 
 ㅁ현재 진행중
 
--gcp 에 배포 준비중 (빌드를 합치고 해야하는지, 따로 배포해야하는지 등)
+-배포준비 (진행중
 
 
 
