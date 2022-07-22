@@ -84,7 +84,7 @@ public class ReplyService {
             ReplyDTO replyDTO = ReplyDTO.builder()
                     .id(reply.getId())
                     .boardId(board.getId())
-                    .replyWriter(reply.getAccount().getNickname())
+                    .replyWriter(reply.getAccount().getUserid())
                     .regdate(formatter.format(reply.getCreateDate()))
                     .replyContent(reply.getReplyContent())
                     .build();

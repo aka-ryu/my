@@ -40,7 +40,10 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
                 request.getServletPath().equals("/api/login") ||
                         request.getServletPath().equals("/api/register") ||
                         request.getServletPath().equals("/") ||
-                        request.getServletPath().startsWith("/board/list")) {
+                        request.getServletPath().startsWith("/board/list") ||
+                        request.getServletPath().startsWith("/email/code") ||
+                        request.getServletPath().startsWith("/email/certification")
+        ) {
 
             log.info("인가가 필요없는 요청");
             filterChain.doFilter(request, response);

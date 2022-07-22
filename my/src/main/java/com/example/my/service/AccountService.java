@@ -5,8 +5,10 @@ import com.example.my.domain.ProtocolDTO.Jwt.RefreshTokenDTO;
 import com.example.my.domain.ProtocolDTO.RegisterResponseDTO;
 import com.example.my.domain.dto.AccountDTO;
 import com.example.my.domain.entity.Account;
+import com.example.my.domain.entity.EmailCheck;
 import com.example.my.domain.entity.Role;
 import com.example.my.repository.AccountRepo;
+import com.example.my.repository.EmailCheckRepo;
 import com.example.my.security.jwt.TokenProvider;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -35,6 +37,8 @@ public class AccountService {
     private final PasswordEncoder passwordEncoder;
 
     private final TokenProvider tokenProvider;
+
+    private final EmailCheckRepo emailCheckRepo;
 
 
     // 회원가입전 유효성
@@ -91,6 +95,12 @@ public class AccountService {
 
     // 유저 회원가입
     public RegisterResponseDTO registerUser(AccountDTO accountDTO) {
+
+        Optional<EmailCheck> optionalEmailCheck = emailCheckRepo.findByEmailAndIsChecked(accountDTO.getEmail(), true);
+        if(optionalEmailCheck.isEmpty()) {
+            log.error("이메일 인증에 문제가 있습니다.");
+            throw new RuntimeException("이메일 인증에 문제가 있습니다.");
+        }
 
         registerValidation(accountDTO);
         accountDTO.setPassword(passwordEncoder.encode(accountDTO.getPassword()));
