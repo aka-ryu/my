@@ -24,9 +24,7 @@
 -database gcp mysql<br>
 -spiring boot local ngrok deploy(gcp failed...) <br>
 
-ㅁ현재 진행중
-
--배포준비 (진행중
+-이메일 인증된 유저만 가입가능
 
 
 
