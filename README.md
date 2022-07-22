@@ -24,7 +24,8 @@
 -database gcp mysql<br>
 -spiring boot local ngrok deploy(gcp failed...) <br>
 
--이메일 인증된 유저만 가입가능
+-이메일 인증구현<br>
+ (회원가입시 email 인증코드 전송, 인증코드 확인 후 가입 계속 진행가능)<br>
 
 
 
